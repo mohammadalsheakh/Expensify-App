@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the exoense list with expenses 1`] = `
+<div>
+  <Connect(ExpenseDashPordFilter) />
+  <ExpenseListItem
+    amount={195}
+    createdAt={0}
+    description="Gum"
+    id={1}
+    key="1"
+    note=""
+  />
+  <ExpenseListItem
+    amount={109}
+    createdAt={-345600000}
+    description="Rent"
+    id={2}
+    key="2"
+    note=""
+  />
+  <ExpenseListItem
+    amount={45}
+    createdAt={345600000}
+    description="credit card"
+    id={3}
+    key="3"
+    note=""
+  />
+</div>
+`;
+
+exports[`should render when there is no expenses 1`] = `
+<div>
+  <Connect(ExpenseDashPordFilter) />
+  <p>
+    There is no expenses
+  </p>
+</div>
+`;

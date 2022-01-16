@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should test the expense item  1`] = `
+<div>
+  <Link
+    to="edit/1"
+  >
+    <h3
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      Gum
+    </h3>
+  </Link>
+  <p>
+    195
+     - 
+    0
+  </p>
+</div>
+`;
