@@ -11,7 +11,6 @@ import EditSingleExpense from "../components/editSingleExpense";
 
 const Approuter = () => (
     <BrowserRouter>
-        <h3>hi man</h3>
         <Header />
         <Routes>
             <Route element={<EditDashbord />} path="/" />
