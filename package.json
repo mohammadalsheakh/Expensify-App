@@ -6,7 +6,8 @@
     "start:prod": "webpack --watch --env production",
     "start:dev": "webpack --watch --env development",
     "build": "webpack-dev-server",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js"
   },
   "keywords": [],
   "author": "",
