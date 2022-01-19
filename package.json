@@ -4,11 +4,12 @@
   "main": "index.html",
   "homepage": "https://mohammadalsheakh.github.io/Expensify-App/",
   "scripts": {
-    "build": "webpack --env production",
+    "build:prod": "webpack --env production",
+    "build:dev": "webpack --env development",
     "build:server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild" : "npm run build"
+    "heroku-postbuild" : "npm run build:prod"
     
   },
   "keywords": [],

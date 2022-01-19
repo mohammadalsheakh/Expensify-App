@@ -3,7 +3,7 @@ const path = require(`path`);
 module.exports = (env) => {
 
     return{
-        mode: 'production' ,
+        mode: env.production ? 'production' : 'development',
         entry: "./src/index.js",
         output: {
             path: path.join(__dirname),
@@ -22,7 +22,7 @@ module.exports = (env) => {
 
 
             ]},
-        devtool:'source-map',
+        devtool: env.production ? 'source-map' : 'eval-cheap-module-source-map',
         
         devServer: {
             historyApiFallback: true,
