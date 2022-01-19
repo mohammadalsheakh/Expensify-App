@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "homepage": "https://mohammadalsheakh.github.io/Expensify-App/",
   "scripts": {
-    "build:prod": "webpack --env production",
-    "build:dev": "webpack --env development",
+    "build": "webpack --env production",
     "build:server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
-    "predeploy" : "npm run build:prod",
-    "deploy" : "gh-pages -d build",
-    "start": "node server/server.js"
+    "predeploy" : "node server/server.js",
+    "deploy" : "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
