@@ -4,7 +4,7 @@ const path = require(`path`)
 const express = require('express')
 const app = express()
 const publicPath = path.join(__dirname, `..`)
-const port = process.env.PORT || 9000
+let port = process.env.PORT || 9000;
 // we use this to register some our midlle where and it means somthink that runs in each request that is mean
 // it will run a block of code in each request 
 
