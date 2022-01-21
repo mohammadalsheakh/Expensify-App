@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 import ExpensesList from "./expenselist";
+import ExpensesSummury from "./expensesSummury";
 
 const EditDashbord = () => {
 
@@ -9,6 +10,7 @@ const EditDashbord = () => {
     //     < button onClick = {() => { navigate("/help") }}> click</button >
     return (
         <div>
+        < ExpensesSummury />
             <ExpensesList />
         </div>
     )
