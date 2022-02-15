@@ -1,6 +1,5 @@
+import myExpenses from "../fixture/myexpenses";
 import { removeExpense, addExpense, editExpense} from "../../actions/expenses";
-
-
 test('should remove expense', () => {
     const action = removeExpense({id : `0592449672`})
     expect(action).toEqual({
@@ -21,37 +20,31 @@ test('should exdit expense', () => {
 })
 
 test('should add expense', () => {
-    const expenseData = {
-        description :'rent',
-        note : 'this is the last month rent',
-        amount : 1900,
-        createdAt : 1000
-    }
-    const action = addExpense(expenseData)
+    const action = addExpense(myExpenses[2])
     expect(action).toEqual({
         type: 'ADD_EXPENSE',
-        expense: {
-            ...expenseData,
-            id : expect.any(String)
-        }
+        expense: myExpenses[2]
     })
 })
 
-test('should add expense (defualt)', () => {
-    const expenseData = {
-        description: '',
-        note: '',
-        amount: 0,
-        createdAt: 0
-    }
 
-    const action = addExpense()
-    expect(action).toEqual({
-        type: 'ADD_EXPENSE',
-        expense : {
-            ...expenseData,
-            id: expect.any(String)
 
-        }
-    })
-})
+//**** this used when the addExpense action is responsible for the defualt case  */
+// test('should add expense (defualt)', () => {
+//     const expenseData = {
+//         description: '',
+//         note: '',
+//         amount: 0,
+//         createdAt: 0
+//     }
+
+//     const action = addExpense()
+//     expect(action).toEqual({
+//         type: 'ADD_EXPENSE',
+//         expense : {
+//             ...expenseData,
+//             id: expect.any(String)
+
+//         }
+//     })
+// })

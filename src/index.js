@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux'
 import Approuter from "./router/AppRouter";
 import store from "./store/store";
-import { addExpense } from "./actions/expenses";
-import { setTextFilter } from "./actions/filters";
-import getVisibleExpenses from "./selections/expenses";
+import { startSetExpense } from "./actions/expenses";
 import "../style.scss";
+import "./firebase/fireBase"
+
 // import 'react-dates/lib/css/_datepicker.css';
 const stores = store()
 const jsx = (
@@ -14,7 +14,12 @@ const jsx = (
         <Approuter />
     </Provider>
 )
-ReactDOM.render(jsx, document.getElementById('root'));
+ReactDOM.render(<p>Pleas Wait </p>, document.getElementById('root'));
+
+stores.dispatch(startSetExpense()).then(() =>{
+    ReactDOM.render(jsx, document.getElementById('root'));
+})
+
 
 
 

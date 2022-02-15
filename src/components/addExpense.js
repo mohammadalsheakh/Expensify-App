@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ExpenseForm from "./expenseForm";
-import { addExpense } from "../actions/expenses";
+import { startAddExpense } from "../actions/expenses";
 import { useNavigate } from "react-router-dom";
 
 
@@ -36,7 +36,7 @@ import { useNavigate } from "react-router-dom";
 export const AddExpense = (props) => {
     const navigate = useNavigate()
     const GetTheExpense = (expense) => {
-        props.onDispatch(expense)
+        props.startAddExpense(expense)
         navigate(`/`)
 
     }
@@ -51,7 +51,7 @@ export const AddExpense = (props) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({ // here we used the dispatch insted of the state 
-    onDispatch: expense => dispatch(addExpense(expense))
+    startAddExpense: expense => dispatch(startAddExpense(expense))
 })
 
 export default connect(undefined,mapDispatchToProps)(AddExpense)
