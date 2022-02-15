@@ -1,6 +1,6 @@
 import database from '../firebase/fireBase';
 import { v1 as uuidv1 } from 'uuid';
-import { get, onValue, push, ref, remove } from 'firebase/database';
+import { get, onValue, push, ref, remove, update } from 'firebase/database';
 // ADD_EXPENSE
 const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
@@ -54,6 +54,13 @@ const editExpense = (id, updates) => ({
     updates
 });
 
+const startEditExpense = (id, updates) =>{
+    return (dispatch) =>{
+        update(ref(database, `expenses/${id}`), updates).then(() =>{
+            dispatch(editExpense(id, updates))
+        })
+    }
+}
 
 
 
@@ -79,5 +86,5 @@ const startSetExpense = () => {
     }
 }
 
-export {removeExpense,addExpense,editExpense,setExpense, startSetExpense,startRemoveExpense}
+export {removeExpense,addExpense,editExpense,setExpense, startSetExpense,startRemoveExpense, startEditExpense}
  // here we have a new return becouse when we use more than one promis in sequance we should return the first to genarate the second

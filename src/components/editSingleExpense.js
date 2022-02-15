@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import ExpenseForm from './expenseForm'
-import { editExpense, startRemoveExpense} from '../actions/expenses'
+import { startEditExpense, startRemoveExpense} from '../actions/expenses'
 
 
 
@@ -20,7 +20,7 @@ function EditSingleExpense(props) {
     let theExpense = getNeeded()
 
     const GetTheExpense = (expense) => {
-        props.dispatch(editExpense(theExpense.id, expense ))
+        props.dispatch(startEditExpense(theExpense.id, expense ))
         navigate(`/`)
     }
 
