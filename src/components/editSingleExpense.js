@@ -21,7 +21,7 @@ function EditSingleExpense(props) {
 
     const GetTheExpense = (expense) => {
         props.dispatch(startEditExpense(theExpense.id, expense ))
-        navigate(`/`)
+        navigate(`/dashboard`)
     }
 
 
@@ -33,7 +33,7 @@ function EditSingleExpense(props) {
             />
             <button onClick={() => {
                 props.dispatch(startRemoveExpense({ id: theExpense.id }))
-                navigate(`/`)
+                navigate(`/dashboard`)
             }} >remove</button>
         </div>
         

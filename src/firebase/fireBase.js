@@ -45,7 +45,16 @@ export default database
 
 
 
+// {
+//     // Allow read/write access to all users under any conditions
+//     // Warning: **NEVER** use this ruleset in production; it allows
+//     // anyone to overwrite your entire database.
 
+//     "rules": {
+//         ".read": true,
+//             ".write": true
+//     }
+// }
 
 
 

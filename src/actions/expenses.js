@@ -8,7 +8,8 @@ const addExpense = (expense) => ({
 });
 
 export const startAddExpense = (expenseData = {}) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
         const {
             description = '',
             note = '',
@@ -16,7 +17,7 @@ export const startAddExpense = (expenseData = {}) => {
             createdAt = 0
         } = expenseData
         const expense = {description , note , amount, createdAt}
-        push(ref(database, `expenses`), expense).then((snapshot) =>{
+        push(ref(database, `users/${uid}/expenses`), expense).then((snapshot) =>{
             dispatch(addExpense({
                 id: snapshot.key,
                 ...expense
@@ -38,7 +39,8 @@ const removeExpense = (id) => ({
 
 const startRemoveExpense = ({ id } = {}) => {
     return (dispatch) =>{
-        remove(ref(database, `expenses/${id}`)).then(() =>{
+        const uid = localStorage.getItem(`uid`)
+        remove(ref(database, `users/${uid}/expenses/${id}`)).then(() =>{
             dispatch(removeExpense(id))
         })
     }
@@ -56,7 +58,8 @@ const editExpense = (id, updates) => ({
 
 const startEditExpense = (id, updates) =>{
     return (dispatch) =>{
-        update(ref(database, `expenses/${id}`), updates).then(() =>{
+        const uid = localStorage.getItem(`uid`)
+        update(ref(database, `users/${uid}/expenses/${id}`), updates).then(() =>{
             dispatch(editExpense(id, updates))
         })
     }
@@ -72,10 +75,11 @@ const setExpense = (expenses) => ({
 })
 
 const startSetExpense = () => {
-    return (dispatch) => {
-        return get(ref(database, `expenses`)).then((snapshot) => {
+    return (dispatch, getState) => {
+        const uid = localStorage.getItem(`uid`)
+        return get(ref(database, `users/${uid}/expenses`)).then((snapshot) => {
             const newArray = []
-            snapshot.forEach(myExpense => {
+            snapshot.forEach((myExpense) => {
                 newArray.push({
                     id: myExpense.key,
                     ...myExpense.val()

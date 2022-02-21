@@ -37,7 +37,7 @@ export const AddExpense = (props) => {
     const navigate = useNavigate()
     const GetTheExpense = (expense) => {
         props.startAddExpense(expense)
-        navigate(`/`)
+        navigate(`/dashboard`)
 
     }
     return (

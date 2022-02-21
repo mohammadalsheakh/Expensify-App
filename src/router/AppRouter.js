@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Routes} from "react-router-dom";
 import EditDashbord from "../components/expenseDashpord";
 import EditExpense from "../components/editExpense";
 import AddExpense from "../components/addExpense";
-import HelpPage from "../components/Help";
-import Header from "../components/Header";
 import PageNotFound from "../components/notfound";
 import EditSingleExpense from "../components/editSingleExpense";
 import LoginPage from "../components/loginPage";
@@ -22,7 +20,6 @@ const Approuter = () => {
                 <Route element={<PrivateRoute>< EditExpense /></PrivateRoute>} path="/edit">
                     <Route path=":id" element={< EditSingleExpense />} />
                 </Route>
-                <Route path="/help" element={<HelpPage />} />
                 <Route element={<PageNotFound />} path="*" />
             </Routes>
         </BrowserRouter>
