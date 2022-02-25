@@ -1,0 +1,15 @@
+.buttun{
+    background-color: $blue;
+    color: white;
+    border: none;
+    padding: $s-size;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: $font-size-large;
+    line-height: 1;
+}
+
+.buttun--link{
+    background: none;
+}

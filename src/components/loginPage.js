@@ -8,19 +8,24 @@ import { loginPage } from '../index'
 export const LoginPage = (props) =>{
     const navigate = useNavigate()
     return(
-        <div>
-            <button onClick={() =>{
-                props.dispatch(StartLogin()).then(() =>{
-                    auth.onAuthStateChanged((user) => {
-                        if (user) {
-                            localStorage.setItem(`uid`, user.uid)
-                            loginPage()
-                            navigate("/dashboard");
-                        }
-                        
+        <div className='box-layout'>
+            <div className='box-layout__box' >
+                <h1>Expensify</h1>
+                <p>Its time to get your expenses under control. </p>
+                <button className='buttun' onClick={() => {
+                    props.dispatch(StartLogin()).then(() => {
+                        auth.onAuthStateChanged((user) => {
+                            if (user) {
+                                localStorage.setItem(`uid`, user.uid)
+                                loginPage()
+                                navigate("/dashboard");
+                            }
+
+                        })
                     })
-                })
-            }}>Login</button>
+                }}>Login with Google</button>
+            </div>
+            
         </div>
     )
 }
