@@ -1,0 +1,82 @@
+.input-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: $l-size;
+}
+.input-group_item{
+    margin-right: $s-size;
+}
+.DateRangePickerInput_arrow_svg{
+    color: red;
+    width: 30px;
+    
+}
+#input-arrow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    span{
+        margin: 0 10px 0 0;
+        font-size: medium;
+    }
+}
+#get1{
+    span{
+        margin: 0 10px 10px 0;
+    }
+    margin-right: 40px;
+}
+#get2{
+    input{
+        width: 120px;
+    }
+}
+.DateRangePickerInput{
+    display: flex;
+    flex-direction: row;
+    width: 280px;
+    justify-content: space-between;
+}
+.DateInput_input{
+    width: 100px;
+}
+
+.DateRangePicker_picker{
+    display: none;
+}
+.DateInput_fang{
+    display: none;
+}
+
+.DayPicker{
+    display: none;
+
+}
+
+#filter_spans{
+    span{
+        color: $darkblue;
+        font-weight: 500;
+    }
+}
+
+@media only screen and  (max-width:610px){
+    #get1{
+        margin: 10px 0 20px 0;
+    }
+    #input-arrow{
+        margin: 0;
+    }
+    .input-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and  (max-width:600px) and (min-width:550){
+    #get1{
+        margin-right: 20px;
+    }
+}

@@ -27,14 +27,24 @@ function EditSingleExpense(props) {
 
     return (
         <div>
-            <ExpenseForm 
-                expense={theExpense}
-                getTheExpense={GetTheExpense}
-            />
-            <button onClick={() => {
-                props.dispatch(startRemoveExpense({ id: theExpense.id }))
-                navigate(`/dashboard`)
-            }} >remove</button>
+            <div className='page-header' >
+                <div className='content_container' >
+                    <h1 className='page-header__h1' >
+                        Edit Expense
+                    </h1>
+                </div>
+            </div>
+            <div className='content_container' >
+                <ExpenseForm
+                    expense={theExpense}
+                    getTheExpense={GetTheExpense}
+                />
+                <button  className='buttun buttun__secondery' onClick={() => {
+                    props.dispatch(startRemoveExpense({ id: theExpense.id }))
+                    navigate(`/dashboard`)
+                }} >Remove Expense </button>
+            </div>
+            
         </div>
         
     )

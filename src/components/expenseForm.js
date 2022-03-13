@@ -70,23 +70,25 @@ export default class ExpenseForm extends Component {
     render() {
         return (
             <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
-                    <input type="text"   placeholder='Description' autoFocus value={this.state.description} onChange={this.onDescriptionChange} />
-                    <input type="number"  placeholder='amount' value={this.state.amount} onChange={this.onAmountChagne} />
+                <form  className='form' onSubmit={this.onSubmit}>
+                    {this.state.error && <p className='form__erorr' >{this.state.error}</p>}
+                    <input type="text" className='text-inputs'  placeholder='Description' autoFocus value={this.state.description} onChange={this.onDescriptionChange} />
+                    <input type="number" placeholder='Amount' className='text-inputs' value={this.state.amount} onChange={this.onAmountChagne} />
                     <SingleDatePicker 
                         
                         date={this.state.createdAt}
                         onDateChange={this.onDateChange}
                         focused={this.state.calendarFocused}
                         onFocusChange={this.onFocusChange}
-                        screenReaderInputMessage={`chose date`}
+                        screenReaderInputMessage={` `}
                         horizontalMargin={0}
                         numberOfMonths={1}
                         isOutsideRange={() => false}
                     />
-                    <textarea placeholder='You can add a note here' value={this.state.note} onChange={this.onNoteChange}></textarea>
-                    <button>Add Expense</button>
+                    <textarea placeholder='You can add a note here' className='text-area' value={this.state.note} onChange={this.onNoteChange}></textarea>
+                    <div>
+                        <button className='buttun' >Save Expense</button>
+                    </div>
                 </form>
             </div>
         )

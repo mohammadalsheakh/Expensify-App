@@ -11,7 +11,7 @@ function ExpensesSummury({expenseCount, expenseTotal}) {
     return(
         <div className='page-header' >
             <div className='content_container'>
-                <h1 className='page-header__h1' >viewing <span>{expenseCount}</span> {expenseWord} expenses totaling <span>{formatExpenseTotal}</span> </h1>
+                <h1 className='page-header__h1' >viewing <span>{expenseCount}</span> {expenseWord} totaling <span>{formatExpenseTotal}</span> </h1>
                 <div className='page-header__action' >
                     < Link to="/create" className='buttun'  >Add Expense</Link>
                 </div>

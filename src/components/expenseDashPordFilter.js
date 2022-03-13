@@ -31,27 +31,40 @@ export class ExpenseDashPordFilter extends React.Component{
     }
     render(){
         return(
-            <div>
-                <select value={this.props.filterValue.sortBy} onChange={this.onSortChange} >
-                    <option value="date" key="date">Date</option>
-                    <option value="amount" key="amount">Amount</option>
-                </select>
-                <input type="text" value={this.props.filterValue.text} onChange={this.onTextChange} />
-                <DateRangePicker 
-                startDate={this.props.filterValue.startDate}
-                startDateId="My Start Date"
-                endDate={this.props.filterValue.endDate}
-                endDateId="My End Date"
-                onDatesChange={this.onDatesChange}
-                focusedInput={this.state.clenderFoucused}
-                onFocusChange={this.onFocusChange}
-                horizontalMargin={0}
-                numberOfMonths={1}
-                isOutsideRange={() => false}
-                screenReaderInputMessage="pick range"
-                showClearDates={true}
+            <div className='content_container' id='filter_spans' >
+            <div className='input-group'>
+                <div className='input-group_item' id='get1'>
+                    <span>Pick filtering method   </span>
+                        <select className='select' value={this.props.filterValue.sortBy} onChange={this.onSortChange} >
+                        <option value="date" key="date">Date</option>
+                        <option value="amount" key="amount">Amount</option>
+                    </select>
+                </div>
+                <div className='input-group_item' id='get2'>
+                    <span>Name of the expense   </span>
+                        <input type="text" placeholder='Search' className='text-inputs' value={this.props.filterValue.text} onChange={this.onTextChange} />
+                </div>
+                </div>
+                <div className='input-group_item' id='input-arrow'>
+                    <span>Pick date range</span>
+                    <DateRangePicker
+                        startDate={this.props.filterValue.startDate}
+                        startDateId="My Start Date"
+                        endDate={this.props.filterValue.endDate}
+                        endDateId="My End Date"
+                        onDatesChange={this.onDatesChange}
+                        focusedInput={this.state.clenderFoucused}
+                        onFocusChange={this.onFocusChange}
+                        horizontalMargin={0}
+                        numberOfMonths={1}
+                        isOutsideRange={() => false}
+                        screenReaderInputMessage=" "
+                        
+                        customArrowIcon={false}
+                        navPosition={undefined}
+                    />
 
-                />
+                </div>
             </div>
 
         )

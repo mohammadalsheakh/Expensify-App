@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, Outlet } from "react-router-dom";
 import moment from 'moment';
 import numeral from 'numeral';
 import { useNavigate } from 'react-router-dom';
@@ -10,18 +9,15 @@ function ExpenseListItem({ id ,description , amount , createdAt}) {
         navigate(`/edit/${id}`)
     }
     return (
-        <div>
-        
-            <button style={{ color:"red"}} onClick={navigateUs} >
-                {description}
-            </button>
-            <p>
-                {numeral(amount).format('$0,0.00')}
-            - 
-                {moment(createdAt).format(`MMMM Do YYYY`)}
-            </p>
-            
-        </div>
+            <div  className='list-item' onClick={navigateUs} >
+                <div>
+                    <h3>{description}</h3>
+                    <span>{moment(createdAt).format(`MMMM Do YYYY`)}</span>
+                </div>
+                <h3>
+                    {numeral(amount).format('$0,0.00')}
+                </h3>
+            </div>
     )
 }
 

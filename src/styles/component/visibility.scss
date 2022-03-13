@@ -1,0 +1,11 @@
+.show-for-mobile{
+    @media (min-width: 500px){
+        display: none;
+    }
+}
+
+.show-for-larg-screen{
+    @media (max-width: 499px){
+        display: none;
+    }
+}

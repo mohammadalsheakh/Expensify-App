@@ -7,13 +7,20 @@ import ExpenseDashPordFilter from "./expenseDashPordFilter";
 export const ExpensesList = (props) => (
     <div>
         <ExpenseDashPordFilter />
-        
-        {
-            props.expense.length === 0 ? (<p>There is no expenses</p>)  : 
-                (props.expense.map((expense) => {
+        <div className="content_container" >
+            <div className="list-header" >
+                <div className="show-for-mobile" >Expenses</div>
+                <div className="show-for-larg-screen" >Expense</div>
+                <div className="show-for-larg-screen" >Amount</div>
+            </div>
+            
+            {
+                props.expense.length === 0 ? (<p>There is no expenses</p>)  : 
+                    (props.expense.map((expense) => {
                     return <ExpenseListItem key={expense.id} {...expense} />
-                }))
-        }
+                    }))
+            }
+        </div>
 
     </div>
 )

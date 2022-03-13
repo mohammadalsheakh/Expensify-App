@@ -42,10 +42,16 @@ export const AddExpense = (props) => {
     }
     return (
         <div>
-            Add Expense 
-            < ExpenseForm
-                getTheExpense={GetTheExpense}
-            />
+            <div className="page-header" >
+                <div className="content_container" >
+                    <h1 className="page-header__h1" >Add Expense</h1>
+                </div>
+            </div>
+            <div className="content_container">
+                < ExpenseForm
+                    getTheExpense={GetTheExpense}
+                />
+            </div>
         </div>
     )
 }

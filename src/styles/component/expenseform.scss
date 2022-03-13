@@ -1,0 +1,17 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    input{
+    text-align: center;
+    font-size: medium;
+    min-width: 180px;
+    }
+    *{
+        margin-bottom: $m-size;
+    }
+}
+.form__erorr{
+    margin: 0 0 $m-size 0;
+    font-style: italic;
+}
+
